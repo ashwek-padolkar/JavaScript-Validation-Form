@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NPTEL Form</title>
+
+    <style>
+        #outline {
+            background-size: 100%;
+            border: 2px solid rgba(6, 142, 240, 0.897);
+            background-color: rgba(107, 185, 240, 0.897);
+        }
+
+        #form {
+            background-image: url("background_img.jpg");
+            width: 800px;
+            margin-left: 250px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 20px 7px rgb(2, 2, 114);
+        }
+
+        #content{
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(0, 0, 0);
+            margin-left: 120px;
+        }
+
+        #form_heading{
+            text-align: center;
+            padding: 20px;
+            color: rgb(255, 251, 0);
+        }
+
+        #name,
+        #rollno,
+        #address,
+        #institute,
+        #state,
+        #caste,
+        #email,
+        #password {
+            width: 80%;
+            padding: 3px 10px;
+            font-size: medium;
+            
+        }
+
+        #name:focus,
+        #rollno:focus,
+        #address:focus,
+        #institute:focus,
+        #state:focus,
+        #caste:focus,
+        #email:focus,
+        #password:focus{
+        background-color: rgb(255, 252, 99);
+        }
+
+        input[type="checkbox"]:checked{
+            accent-color: rgb(0, 0, 0)
+        }
+
+        input[type="radio"]:checked{
+            accent-color: rgb(0, 0, 0)
+        }
+
+        input[type="range"]{
+            accent-color: rgb(0, 0, 0)
+        }
+
+        #submit{
+            padding: 5px;
+            margin-left: 330px;
+            color: rgb(255, 255, 0);
+            background-color: rgb(0, 0, 0);
+        }
+        
+        #reset{
+            padding: 5px;
+            margin-left: 30px;
+            color: rgb(255, 247, 0);
+            background-color: rgb(0, 0, 0);
+        }
+        
+        #submit:hover,#reset:hover{
+        transform: scale(1.1);
+        }
+    </style>
+
+    <script src="j1.js"></script>
+
+</head>
+
+<body>
+    <form onsubmit="f1()">
+
+        <div id="outline">
+
+            <div id="form">
+                
+                <h1 id="form_heading"><u>NPTEL Exam Registration Form</u></h1><br>
+                
+                <div id="content">
+    
+                    <!-- Textboxes (placeholder,required,read only,disabled) -->
+                    <label for="name"><b>Enter your name:</b></label><br>
+                    <input type="text" id="name" name="name" placeholder="Use Block Letters" autocomplete="off"><br><br>
+    
+                    <label for="rollno"><b>Enter your Roll no.:</b></label><br>
+                    <input type="text" id="rollno" name="rollno" placeholder="Eg. 19CO06" required autocomplete="off"><br><br>
+    
+                    <label for="address"><b>Enter Address:</b></label><br>
+                    <input type="text" id="address" autocomplete="off"><br><br>
+    
+                    <label for="institute"><b>Institute Name:</b></label><br>
+                    <input type="text" id="institute" value="Agnel Institute of Technology and Design" disabled><br><br>
+    
+                    <label for="state"><b>Enter State:</b></label><br>
+                    <input type="text" id="state" name="state" value="Goa" readonly><br><br>
+    
+                    <!-- Dropdown Menu using select element -->
+                    <label for="caste"><b>Select Your Caste:</b></label><br>
+                    <select name="caste" id="caste">
+                        <option></option>
+                        <option value="General">Gen</option>
+                        <option value="Obc">OBC</option>
+                        <option value="sc/st">SC/ST</option>
+                    </select>
+                    <br><br>
+    
+                    <!-- File Picker -->
+                    <label for="caste"><b>Upload Caste Certificate:</b></label>
+                    <input type="file">
+                    <br><br>
+    
+                    <!--Email and Password field (autocomplete) -->
+                    <label for="email"><b>E-mail address:</b></label><br>
+                    <input type="text" name="email" id="email" autocomplete="off"><br><br>
+    
+                    <label for="password"><b>Password:</b></label><br>
+                    <input type="password" id="password" name="password"><br><br>
+    
+                    <!-- Date -->
+                    <label for="dateofbirth"><b>Select DOB:</b></label>
+                    <input type="date" id="dob"><br><br>
+    
+                    <!-- Radio Buttons (autofocus) -->
+                    <label for="branch"><b>Select Your Branch:</b></label><br>
+    
+                    <label for="comp">
+                        <input type="radio" value="Comp" name="branch" id="comp" class="branch" autofocus>COMP
+                    </label><br>
+    
+                    <label for="mech">
+                        <input type="radio" value="Mech" name="branch" id="mech" class="branch">MECH
+                    </label><br>
+    
+                    <label for="ece">
+                        <input type="radio" value="ECE" name="branch" id="ece" class="branch">ECE
+                    </label><br><br>
+    
+                    <!-- Checkboxes -->
+                    <label for="language"><b>Computer Languages Known:</b></label><br>
+                    <input type="checkbox" name="language" value="C">
+                    <label for="c">C</label><br>
+                    <input type="checkbox" name="language" value="C++">
+                    <label for="cpp">C++</label><br>
+                    <input type="checkbox" name="language" value="Java">
+                    <label for="java">Java</label><br>
+                    <input type="checkbox" name="language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="checkbox" name="language" value="Python">
+                    <label for="python">Python</label><br><br>
+    
+                    <!-- Color -->
+                    <label for="color"><b>Choose your favourite color:</b></label>
+                    <input type="color">
+    
+                    <!-- Number Field -->
+                    <br><br>
+                    <label for="canteen"><b>Want NPTEL Special Coupon Card?:</b></label>
+                    <input type="checkbox" name="canteen" id="canteen"><br>
+                    <label for="quantity"><b>Quantity (between 2 to 8)</b></label>
+                    <input type="number" id="quantity" name="quantity" min="2" max="8">
+    
+                    <!-- Range Field -->
+                    <br><br>
+                    <label for="quantity"><b>Give Ratings to NPTEL: </b></label>
+                    <input type="range" id="quantity" name="quantity" min="10" max="35" step="5">
+    
+                </div>
+
+                <!-- Submit and Reset Button -->
+                <br><br>
+                <input type="submit" value="Submit" id="submit">
+                <input type="reset" value="Reset" id="reset">
+                <br><br>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
